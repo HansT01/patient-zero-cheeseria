@@ -24,8 +24,8 @@ const CheesePanel = (props: CheesePanelProps) => {
   }
 
   return (
-    <div className='bg-background text-background-fg flex overflow-hidden rounded-lg border'>
-      <div className='h-[240px] w-1/3'>
+    <div className='bg-background text-background-fg flex overflow-hidden rounded-lg border max-sm:flex-col'>
+      <div className='h-[220px] w-1/3 max-sm:w-full'>
         <Image
           src={`/images/${props.cheese.id}.jpg`}
           className='h-full w-full object-cover'
@@ -34,7 +34,7 @@ const CheesePanel = (props: CheesePanelProps) => {
           height={480}
         />
       </div>
-      <div className='flex grow flex-col gap-2 p-8'>
+      <div className='flex h-[220px] grow flex-col gap-2 p-8'>
         <h2 className='text-4xl font-light capitalize'>{props.cheese.name}</h2>
         <div className='flex flex-col'>
           <div className='capitalize'>Colour: {props.cheese.colour}</div>
@@ -67,7 +67,7 @@ const Home = () => {
   const totalPrice = cheeses.reduce((acc, cheese) => acc + cheese.price_per_kilo * cheese.quantity, 0)
 
   return (
-    <main className='bg-accent text-accent-fg container mx-auto flex min-h-svh max-w-screen-lg flex-col gap-8 p-4 sm:p-8'>
+    <main className='bg-accent text-accent-fg container mx-auto flex min-h-svh max-w-screen-lg flex-col gap-8 p-8 max-sm:p-8'>
       <h1 className='text-center text-6xl font-extralight'>PZ Cheeseria</h1>
       <div className='flex flex-col gap-4'>
         <h2 className='text-2xl'>Cheeses</h2>
@@ -91,10 +91,10 @@ const Home = () => {
         <table className='bg-background text-background-fg'>
           <thead>
             <tr>
-              <th className='border-primary grow border px-4 py-2 sm:w-1/4'>Cheese</th>
-              <th className='border-primary grow border px-4 py-2 sm:w-1/4'>Price</th>
-              <th className='border-primary grow border px-4 py-2 sm:w-1/4'>Quantity</th>
-              <th className='border-primary grow border px-4 py-2 sm:w-1/4'>Total Price</th>
+              <th className='border-primary border px-4 py-2 max-sm:w-1/2 sm:w-1/4'>Cheese</th>
+              <th className='border-primary border px-4 py-2 max-sm:hidden sm:w-1/4'>Price</th>
+              <th className='border-primary border px-4 py-2 max-sm:hidden sm:w-1/4'>Quantity</th>
+              <th className='border-primary border px-4 py-2 max-sm:w-1/2 sm:w-1/4'>Total Price</th>
             </tr>
           </thead>
           <tbody>
@@ -105,8 +105,10 @@ const Home = () => {
               return (
                 <tr>
                   <td className='border-primary border px-4 py-2 capitalize'>{cheese.name}</td>
-                  <td className='border-primary border px-4 py-2'>{formatMoney(cheese.price_per_kilo)}/kg</td>
-                  <td className='border-primary border px-4 py-2'>{formatQuantity(cheese.quantity)}</td>
+                  <td className='border-primary border px-4 py-2 max-sm:hidden'>
+                    {formatMoney(cheese.price_per_kilo)}/kg
+                  </td>
+                  <td className='border-primary border px-4 py-2 max-sm:hidden'>{formatQuantity(cheese.quantity)}</td>
                   <td className='border-primary border px-4 py-2'>
                     {formatMoney(cheese.price_per_kilo * cheese.quantity)}
                   </td>
@@ -114,7 +116,8 @@ const Home = () => {
               )
             })}
             <tr>
-              <td colSpan={3} className='border-primary border px-4 py-2' />
+              <td colSpan={3} className='border-primary border px-4 py-2 max-sm:hidden' />
+              <td colSpan={1} className='border-primary border px-4 py-2 sm:hidden' />
               <td className='border-primary bg-primary text-primary-fg border px-4 py-2'>{formatMoney(totalPrice)}</td>
             </tr>
           </tbody>
