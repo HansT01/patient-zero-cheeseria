@@ -7,10 +7,38 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: [
+        'Inter',
+        'ui-sans-serif',
+        'system-ui',
+        'sans-serif',
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol',
+        'Noto Color Emoji',
+      ],
+      mono: [
+        'ui-monospace',
+        'SFMono-Regular',
+        'Menlo',
+        'Monaco',
+        'Consolas',
+        'Liberation Mono',
+        'Courier New',
+        'monospace',
+      ],
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        'background': 'var(--background)',
+        'background-fg': 'var(--background-fg)',
+        'accent': 'var(--accent)',
+        'accent-fg': 'var(--accent-fg)',
+        'primary': 'var(--primary)',
+        'primary-fg': 'var(--primary-fg)',
+        'secondary': 'var(--secondary)',
+        'secondary-fg': 'var(--secondary-fg)',
       },
     },
   },
