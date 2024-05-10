@@ -1,6 +1,6 @@
 import { GET as getCheeses } from '@/app/api/route'
-import { CheesesView } from '@/components/CheesesView'
 import type CheesesJSON from '@/data/cheeses.json'
+import CheesesView from './cheeses-view'
 
 const Home = async () => {
   const res = await getCheeses()

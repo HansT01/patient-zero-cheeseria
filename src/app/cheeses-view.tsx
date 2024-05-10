@@ -3,13 +3,13 @@
 import type CheesesJSON from '@/data/cheeses.json'
 import { formatMoney, formatQuantity } from '@/utils/format'
 import { useState } from 'react'
-import { CheesePanel } from './CheesePanel'
+import CheesePanel from './cheese-panel'
 
 interface CheesesProps {
   cheeses: typeof CheesesJSON
 }
 
-export const CheesesView = (props: CheesesProps) => {
+const CheesesView = (props: CheesesProps) => {
   const [cheeses, setCheeses] = useState(
     props.cheeses.map((cheese) => {
       return { ...cheese, quantity: 0 }
@@ -77,3 +77,5 @@ export const CheesesView = (props: CheesesProps) => {
     </div>
   )
 }
+
+export default CheesesView

@@ -9,7 +9,7 @@ interface CheesePanelProps {
   onQuantityChange: (quantity: number) => void
 }
 
-export const CheesePanel = (props: CheesePanelProps) => {
+const CheesePanel = (props: CheesePanelProps) => {
   const [quantity, setQuantity] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -55,3 +55,5 @@ export const CheesePanel = (props: CheesePanelProps) => {
     </div>
   )
 }
+
+export default CheesePanel
