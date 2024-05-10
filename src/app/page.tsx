@@ -1,15 +1,26 @@
-import { GET as getCheeses } from '@/app/api/route'
+'use client'
+
 import type CheesesJSON from '@/data/cheeses.json'
+import { useEffect, useState } from 'react'
 import CheesesView from './cheeses-view'
 
-const Home = async () => {
-  const res = await getCheeses()
-  const cheeses: typeof CheesesJSON = await res.json()
+const Home = () => {
+  const [cheeses, setCheeses] = useState<typeof CheesesJSON | null>(null)
+
+  useEffect(() => {
+    const getCheeses = async () => {
+      const res = await fetch('/api')
+      const cheeses: typeof CheesesJSON = await res.json()
+      return cheeses
+    }
+    getCheeses().then(setCheeses)
+  }, [])
+
   return (
     <div className='dark:dark bg-background text-background-fg'>
-      <main className='bg-accent text-accent-fg container mx-auto flex min-h-svh max-w-screen-lg flex-col gap-8 p-8 max-sm:p-8'>
+      <main className='container mx-auto flex min-h-svh max-w-screen-lg flex-col gap-8 bg-accent p-8 text-accent-fg max-sm:p-8'>
         <h1 className='text-center text-6xl font-extralight'>PZ Cheeseria</h1>
-        <CheesesView cheeses={cheeses} />
+        {cheeses && <CheesesView cheeses={cheeses} />}
       </main>
     </div>
   )

@@ -30,5 +30,4 @@
 ## Extras
 
 - The app has a responsive and can be viewed from a mobile screen.
-- Server-side rendering of cheeses.
 - Dark mode.
