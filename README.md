@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PZ Cheeseria
 
-## Getting Started
+## Running the dev server
 
-First, run the development server:
+1. Pull the repository
+2. `pnpm install`
+3. `pnpm dev`
+4. Navigate to http://localhost:3000 for the app
+5. Navigate to http://localhost:3000/api-doc for the swagger endpoint
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What is included
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [x] Angular or React or Vue (front end)
+- [x] NodeJS or .Net Core or Java (back end)
+- [x] Swagger / Open API
+- [ ] Unit Tests
+- [x] Dockerfile
+- [x] Calculator that shows total price based on weight
+- [x] Docker build pipeline
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Limitations or potential features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Due to time constraints, I have foregone writing integration tests. However, my approach will likely be to use playwright codegen.
+- Swagger end point is bootstrapped using `next-swagger-doc`.
+- The displayed data is stored as a `cheeses.json` file. This can be replaced with a database solution.
+- No favicon.
+- Can use cookies to allow state to persist across different sessions.
+- As per requirements, this application only displays cheeses and a price calculator. It does not facilitate online purchases.
 
-## Learn More
+## Extras
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- The app has a responsive and can be viewed from a mobile screen.
+- Server-side rendering of cheeses.
+- Dark mode.
