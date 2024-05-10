@@ -1,8 +1,8 @@
 'use client'
 
+import CheesesView from '@/components/cheeses-view'
 import type CheesesJSON from '@/data/cheeses.json'
 import { useEffect, useState } from 'react'
-import CheesesView from './cheeses-view'
 
 const Home = () => {
   const [cheeses, setCheeses] = useState<typeof CheesesJSON | null>(null)
