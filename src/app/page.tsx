@@ -1,5 +1,5 @@
+import cheeses from '@/cheeses.json'
 import Image from 'next/image'
-import cheeses from '../cheeses.json'
 
 export default function Home() {
   return (
