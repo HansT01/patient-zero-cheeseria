@@ -21,6 +21,7 @@
 ## Limitations or potential features
 
 - Due to time constraints, I have foregone writing integration tests. However, my approach will likely be to use playwright codegen.
+- Figures for cheese price per kilo are not real.
 - Swagger end point is bootstrapped using `next-swagger-doc`.
 - The displayed data is stored as a `cheeses.json` file. This can be replaced with a database solution.
 - No favicon.
