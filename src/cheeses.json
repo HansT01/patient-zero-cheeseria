@@ -1,0 +1,32 @@
+[
+  {
+    "id": "gouda",
+    "name": "gouda",
+    "colour": "yellow",
+    "price_per_kilo": 20.2
+  },
+  {
+    "id": "brie",
+    "name": "brie",
+    "colour": "cream",
+    "price_per_kilo": 17.6
+  },
+  {
+    "id": "cheddar",
+    "name": "cheddar",
+    "colour": "pale yellow",
+    "price_per_kilo": 13.9
+  },
+  {
+    "id": "feta",
+    "name": "feta",
+    "colour": "white",
+    "price_per_kilo": 15.8
+  },
+  {
+    "id": "mozzarella",
+    "name": "mozzarella",
+    "colour": "white",
+    "price_per_kilo": 11.7
+  }
+]
