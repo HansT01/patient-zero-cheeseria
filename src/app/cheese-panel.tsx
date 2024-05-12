@@ -23,7 +23,7 @@ const CheesePanel = (props: CheesePanelProps) => {
   }
 
   return (
-    <div className='bg-background text-background-fg flex overflow-hidden rounded-lg border max-sm:flex-col'>
+    <div className='flex overflow-hidden rounded-lg border bg-background text-background-fg max-sm:flex-col'>
       <div className='h-[220px] w-1/3 max-sm:w-full'>
         <Image
           src={`/images/${props.cheese.id}.jpg`}
@@ -48,7 +48,7 @@ const CheesePanel = (props: CheesePanelProps) => {
             value={quantity}
             onFocus={(e) => e.target.select()}
             onChange={handleChange}
-            className='bg-secondary text-secondary-fg w-full min-w-0 max-w-[160px] rounded-lg px-2 py-1'
+            className='w-full min-w-0 max-w-[160px] rounded-lg bg-secondary px-2 py-1 text-secondary-fg'
           />
         </div>
       </div>
