@@ -1,9 +1,9 @@
 import { createSwaggerSpec } from 'next-swagger-doc'
 import dynamic from 'next/dynamic'
 
-const ReactSwagger = dynamic(() => import('@/app/api-doc/react-swagger'), { ssr: false })
+const ReactSwagger = dynamic(() => import('@/components/react-swagger'), { ssr: false })
 
-const getSwaggerSpec = async () => {
+const getApiDocs = async () => {
   const spec = createSwaggerSpec({
     apiFolder: 'src/app/api',
     definition: {
@@ -18,8 +18,8 @@ const getSwaggerSpec = async () => {
   return spec
 }
 
-const ApiDoc = async () => {
-  const spec = await getSwaggerSpec()
+const APIDoc = async () => {
+  const spec = await getApiDocs()
   return (
     <main className='container mx-auto px-6'>
       <ReactSwagger spec={spec} />
@@ -27,4 +27,4 @@ const ApiDoc = async () => {
   )
 }
 
-export default ApiDoc
+export default APIDoc
