@@ -25,7 +25,7 @@ const CheesesView = (props: CheesesProps) => {
         <div className='flex flex-col gap-4'>
           {cheeses.map((cheese) => {
             return (
-              <div id={cheese.id}>
+              <div key={cheese.id}>
                 <CheesePanel
                   cheese={cheese}
                   onQuantityChange={(quantity) =>
@@ -54,7 +54,7 @@ const CheesesView = (props: CheesesProps) => {
                 return
               }
               return (
-                <tr>
+                <tr key={cheese.id}>
                   <td className='border border-primary px-4 py-2 capitalize'>{cheese.name}</td>
                   <td className='border border-primary px-4 py-2 max-sm:hidden'>
                     {formatMoney(cheese.price_per_kilo)}/kg
