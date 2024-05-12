@@ -1,6 +1,6 @@
 'use client'
 
-import CheesesView from '@/components/cheeses-view'
+import CheesesView from '@/app/cheeses-view'
 import type CheesesJSON from '@/data/cheeses.json'
 import { useEffect, useState } from 'react'
 
